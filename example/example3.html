@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attestation of Conformity - Classic Style</title>
+    <style>
+        :root {
+            --page-bg: #f4f1ea;
+            --cert-bg: #ffffff;
+            --text-color: #3d3d3d;
+            --heading-color: #1e1e1e;
+            --accent-color: #bfa16a;
+            --border-color: #d1c7b8;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--page-bg);
+            color: var(--text-color);
+            margin: 0;
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d1c7b8' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .certificate-wrapper {
+            width: 210mm;
+            min-height: 297mm;
+            background-color: var(--cert-bg);
+            box-shadow: 0 0 5px rgba(0,0,0,0.1), 0 0 20px rgba(0,0,0,0.1);
+            position: relative;
+            padding: 2cm;
+            box-sizing: border-box;
+            border: 1px solid var(--border-color);
+            outline: 6px solid var(--cert-bg);
+            outline-offset: -10px;
+        }
+        
+        .certificate-content {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--border-color);
+            padding: 1.5cm;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2.5em;
+        }
+
+        .header h1 {
+            font-family: Arial, sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--heading-color);
+            margin: 0 0 0.2em 0;
+        }
+
+        .header::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 1px;
+            background-color: var(--accent-color);
+            margin: 0.5em auto 0;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 0.9rem 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .details-grid dt {
+            font-weight: 600;
+            color: var(--heading-color);
+        }
+
+        .details-grid dd {
+            margin: 0;
+        }
+
+        .statement {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .main-disclaimer {
+            margin-top: 2rem;
+            font-size: 0.85rem;
+            line-height: 1.7;
+            text-align: justify;
+            padding: 1.2em;
+            background-color: #fdfcf9;
+            border: 1px solid var(--border-color);
+            border-radius: 2px;
+        }
+        
+        .page-footer {
+            margin-top: auto;
+            padding-top: 2rem;
+            font-size: 0.8rem;
+            color: #777;
+            line-height: 1.5;
+            text-align: center;
+        }
+        
+        .signature-block {
+            margin-top: 3rem;
+        }
+
+        .signature-area {
+            text-align: left;
+            width: 300px;
+            margin-left: auto;
+        }
+        
+        .signature-area .date {
+             margin-bottom: 3rem;
+             font-style: italic;
+        }
+        
+        .signature-area .line {
+            border-bottom: 1px solid var(--text-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .signature-area .label {
+            font-weight: 600;
+            font-family: Arial, sans-serif;
+        }
+
+        .signature-area .title {
+            font-size: 0.9rem;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+            }
+            .certificate-wrapper {
+                box-shadow: none;
+                border: 2px solid #000;
+                width: 100%;
+                min-height: auto;
+                outline: none;
+            }
+            .certificate-content{
+                border: 1px solid #666;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="certificate-wrapper">
+        <div class="certificate-content">
+            <header class="header">
+                <h1>Attestation of Conformity</h1>
+            </header>
+
+            <main>
+                <dl class="details-grid">
+                    <dt>No.:</dt>
+                    <dd>XXXXXXXX</dd>
+                    
+                    <dt>Product:</dt>
+                    <dd>XXXXXXXXXX</dd>
+                    
+                    <dt>Tested by request of:</dt>
+                    <dd>XXXXXXXXXXXXXXXXXXXX<br>XXXXXXXXXXXXXXXXXXXX</dd>
+                    
+                    <dt>Manufactured at (name and place):</dt>
+                    <dd>XXXXXXXXXXXXXXXXXXXX</dd>
+
+                    <dt>Model/Type Ref.:</dt>
+                    <dd>XXXXXXXXXX</dd>
+
+                    <dt>Trade mark (if any):</dt>
+                    <dd>XXXXX</dd>
+                    
+                    <dt>Ratings and principal characteristics:</dt>
+                    <dd>XXXXXXXXXXXXXXXXXX</dd>
+
+                    <dt>Additional information (if any):</dt>
+                    <dd>XXXXXXXXXXXXXXXXXX</dd>
+                </dl>
+
+                <p class="statement">
+                    Sufficient samples of the product have been tested and found to be in conformity with:
+                </p>
+
+                <dl class="details-grid">
+                    <dt>Test standard:</dt>
+                    <dd></dd>
+                    <dt>as shown in the Test Report Number(s):</dt>
+                    <dd>XXXXXXXXXXXXXXXXXX</dd>
+                </dl>
+
+                <p class="main-disclaimer">
+                    This Attestation of Conformity is issued on a voluntary basis according to the Low Voltage Directive (2014/35/EU) relating to electrical equipment designed for use within certain voltage limits. The test results is based on tested samples of the product. Samples of the product have been tested and found to be in conformity with the above-mentioned standard(s) which are harmonized under the Low Voltage Directive.
+                    <br><br>
+                    This statement of test results is not a SGS CEBEC certificate thus not giving the right to use the CEBEC or SGS CEBEC mark on products, its packaging or any marketing material or activities.
+                </p>
+                
+                <div class="signature-block">
+                    <div class="signature-area">
+                        <p class="date">Brussels, DD/MM/YYYY</p>
+                        <div class="line"></div>
+                        <p class="label">Certifier</p>
+                        <p class="title">Title</p>
+                    </div>
+                </div>
+
+            </main>
+
+            <footer class="page-footer">
+                
+            </footer>
+        </div>
+    </div>
+</body>
+</html> 
