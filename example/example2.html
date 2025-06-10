@@ -29,12 +29,12 @@
 
         .certificate-wrapper {
             width: 210mm;
-            min-height: 297mm;
+            height: 297mm;
             background-color: var(--cert-bg);
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
             border-top: 8px solid var(--accent-color);
             position: relative;
-            padding: 3cm;
+            padding: 1.8cm 1.5cm 0.8cm 1.5cm;
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
@@ -46,28 +46,47 @@
             flex-direction: column;
         }
 
+        main {
+            background-image: url('../public/backend_svg.png');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: contain;
+            flex: 1;
+            position: relative;
+            margin-bottom: 1rem;
+        }
+
+        .top-right-tag {
+            position: absolute;
+            top: 34px;
+            right: 5px;
+            width: 180px;
+            height: auto;
+            z-index: 10;
+        }
+
         .header {
             text-align: center;
-            margin-bottom: 3em;
+            margin-bottom: 1.2em;
             border-bottom: 1px solid var(--border-color);
-            padding-bottom: 1.5em;
+            padding-bottom: 0.6em;
         }
 
         .header h1 {
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: var(--heading-color);
             text-transform: uppercase;
-            letter-spacing: 0.2em;
+            letter-spacing: 0.1em;
             margin: 0;
         }
 
         .details-grid {
             display: grid;
-            grid-template-columns: 220px 1fr;
-            gap: 1rem 2rem;
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
+            grid-template-columns: 180px 1fr;
+            gap: 0.5rem 1rem;
+            font-size: 0.88rem;
+            margin-bottom: 0.8rem;
         }
 
         .details-grid dt {
@@ -83,13 +102,13 @@
         }
 
         .statement, .main-disclaimer {
-            margin-top: 1rem;
-            font-size: 0.95rem;
-            line-height: 1.7;
-            padding: 1.5rem;
-            background-color: #f5f5f5;
+            margin-top: 0.5rem;
+            font-size: 0.88rem;
+            line-height: 1.5;
+            padding: 0.8rem;
+            background-color: rgba(245, 245, 245, 0.3);
             border-left: 4px solid var(--accent-color);
-            margin-bottom: 1rem; /* Added margin for spacing */
+            margin-bottom: 0.8rem;
         }
         
         .main-disclaimer .disclaimer-emphasis {
@@ -102,29 +121,95 @@
         
         .page-footer {
             margin-top: auto;
-            padding-top: 2rem;
-            font-size: 0.75rem;
+            padding-top: 0.5rem;
+            font-size: 0.65rem;
             color: #666;
-            line-height: 1.5;
-            text-align: center;
+            line-height: 1.3;
             border-top: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .footer-logo {
+            position: absolute;
+            top: -4.5rem;
+            left: 40%;
+            transform: translateX(-50%);
+            width: 75%;
+            height: auto;
+            background: transparent;
+            mix-blend-mode: multiply;
+            z-index: 1;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1.5rem;
+            padding-top: 2rem;
+            position: relative;
+            z-index: 2;
+            bottom: 1rem;
+        }
+
+        .footer-left {
+            flex: 2.5;
+        }
+
+        .footer-right {
+            flex: 1;
+            text-align: right;
+        }
+
+        .page-number {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            font-size: 0.7rem;
+        }
+
+        .footer-text {
+            margin-bottom: 0.6rem;
+            text-align: justify;
+            font-size: 0.55rem;
+            line-height: 1.4;
+        }
+
+        .footer-text a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .footer-text a:hover {
+            text-decoration: underline;
+        }
+
+        .company-info {
+            font-size: 0.65rem;
+            line-height: 1.3;
+        }
+
+        .company-info strong {
+            color: var(--heading-color);
         }
         
         .signature-block {
-            margin-top: 4rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
             display: flex;
             justify-content: flex-end;
+            position: relative;
+            z-index: 2;
         }
 
         .signature-area {
             text-align: center;
-            width: 280px;
+            width: 200px;
         }
         
         .signature-area .date {
              color: var(--text-color);
-             margin-bottom: 4rem;
-             font-size: 0.9rem;
+             margin-bottom: 2rem;
+             font-size: 0.8rem;
         }
         
         .signature-area .line {
@@ -147,24 +232,36 @@
             body {
                 background-color: #fff;
                 padding: 0;
+                margin: 0;
             }
             .certificate-wrapper {
                 box-shadow: none;
                 border: none;
-                width: 100%;
-                min-height: auto;
-                padding: 1cm;
+                width: 210mm;
+                height: 297mm;
+                padding: 12mm 10mm 8mm 10mm;
+                margin: 0;
             }
             .statement, .main-disclaimer {
-                background-color: #fff;
-                border-left: 2px solid #ccc;
+                background-color: rgba(245, 245, 245, 0.15);
+                border-left: 2px solid #FF6600;
+            }
+            .top-right-tag {
+                width: 150px;
+            }
+            .footer-logo {
+                width: 50%;
+                top: -2.0rem;
             }
         }
+
+
 
     </style>
 </head>
 <body>
     <div class="certificate-wrapper">
+        <img src="../public/top_right_side.png" alt="Top Right Tag" class="top-right-tag">
         <div class="certificate-content">
             <header class="header">
                 <h1>ATTESTATION OF CONFORMITY</h1>
@@ -225,7 +322,28 @@
             </main>
 
             <footer class="page-footer">
+                <img src="../public/foot_svg.png" alt="Footer Logo" class="footer-logo">
                 
+                <div class="footer-content">
+                    <div class="footer-left">
+                        <div class="page-number">Page 1 of 1</div>
+                        
+                        <p class="footer-text">This document is issued by the company under its General Conditions of Service accessible at <a href="http://www.sgs.com/terms_and_conditions.htm">http://www.sgs.com/terms_and_conditions.htm</a>. Attention is drawn to the limitation of liability, indemnification and jurisdiction issues defined therein.</p>
+                        
+                        <p class="footer-text">Any holder of this document is advised that information contained hereon reflects Company's findings at the time of its intervention only and within the limits of Client's instructions, if any. The Company's sole responsibility is to its Client and this document does not exonerate parties to a transaction from exercising all their rights and obligations under the transaction documents. Any unauthorized alteration, forgery or falsification of the content or appearance of this document is unlawful and offenders may be prosecuted to the fullest extent of the law.</p>
+                    </div>
+                    
+                    <div class="footer-right">
+                        <div class="company-info">
+                            <strong>SGS Belgium NV – Division SGS CEBEC</strong><br>
+                            Riverside Business Park<br>
+                            Avenue Internationalelaan 55 Building K<br>
+                            BE-1070 Brussels<br>
+                            Tel. +32 2 556 00 20<br>
+                            Fax +32 2 556 00 36
+                        </div>
+                    </div>
+                </div>
             </footer>
         </div>
     </div>
